@@ -2,14 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-// TODO: drop the real URLs in here once the token is live on pump.fun
-export const X_URL = "#";
-export const TOKEN_URL = "#";
-
-const NAV = [
-  { label: "X", href: X_URL },
-  { label: "Token", href: TOKEN_URL },
-];
+const NAV = [{ label: "How it works", href: "/how-it-works" }];
 
 const SUB =
   "MS6900 buys real, listed equities OTC and airdrops them to token holders — every distribution settled onchain through pump.fun.";
@@ -46,7 +39,7 @@ export default function Hero() {
         </a>
         <div className="nav__links">
           {NAV.map((n) => (
-            <a key={n.label} href={n.href} target="_blank" rel="noopener noreferrer">
+            <a key={n.label} href={n.href}>
               {n.label}
             </a>
           ))}
@@ -54,7 +47,6 @@ export default function Hero() {
       </nav>
 
       <section className="hero" id="hero">
-        <div className="hero__photo" aria-hidden />
         <div className="visual" aria-hidden>
           <div className="visual__wash" />
           <div className="visual__core" />
