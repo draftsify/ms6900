@@ -58,7 +58,6 @@ export default function Hero({ children }: { children?: React.ReactNode }) {
         </div>
 
         <div className="hero__inner">
-          <span className="pill anim">Real Equity Distribution</span>
 
           <h1 className="hero__title anim">
             The tokenized stock distribution layer
