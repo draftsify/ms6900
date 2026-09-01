@@ -2,24 +2,13 @@
 const COLS = [
   {
     title: "Protocol",
-    links: [
-      { label: "Stocks", href: "/#listings" },
-      { label: "Claim", href: "/#claim" },
-    ],
-  },
-  {
-    title: "Proofs",
-    links: [
-      { label: "Airdrops", href: "/airdrops" },
-      { label: "Transactions", href: "/airdrops" },
-    ],
+    links: [{ label: "Stocks", href: "/#listings" }],
   },
   {
     title: "Elsewhere",
     links: [
       { label: "X / Twitter", href: "#" },
-      { label: "Telegram", href: "#" },
-      { label: "pump.fun", href: "#" },
+      { label: "Token", href: "#" },
     ],
   },
 ];

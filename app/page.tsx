@@ -6,9 +6,8 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main>
-      <Hero>
-        <ClaimPanel embedded />
-      </Hero>
+      <Hero />
+      <ClaimPanel embedded />
       <Ticker />
       <Footer />
     </main>

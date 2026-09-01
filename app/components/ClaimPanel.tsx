@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { LISTINGS } from "./Ticker";
-import DashBar from "./DashBar";
 
 const SOLANA = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
 
@@ -66,8 +65,17 @@ export default function ClaimPanel({ embedded = false }: { embedded?: boolean })
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Request failed");
-      setStatus({ kind: "done", msg: data.id });
+      if (!res.ok) throw new Error(data?.detail || data?.error || "Request failed");
+      if (!data.sent?.length) {
+        setStatus({ kind: "done", msg: data.error ?? "Nothing owed yet" });
+        return;
+      }
+      setStatus({
+        kind: "done",
+        msg: data.sent
+          .map((s: { stock: string; amount: number }) => `${s.amount} ${s.stock}`)
+          .join(", "),
+      });
     } catch (e) {
       setStatus({ kind: "error", msg: e instanceof Error ? e.message : "Failed" });
     }
@@ -75,8 +83,6 @@ export default function ClaimPanel({ embedded = false }: { embedded?: boolean })
 
   return (
     <div className={embedded ? "dash dash--embed" : "dash"} id="claim">
-      {!embedded && <DashBar active="claim" />}
-
       <main className="dash__main">
         <div className="dash__head" data-reveal>
           {embedded ? <h2>Claim your allocation</h2> : <h1>Claim your allocation</h1>}
@@ -224,8 +230,7 @@ export default function ClaimPanel({ embedded = false }: { embedded?: boolean })
 
           {status.kind === "done" && (
             <p className="note is-ok">
-              Queued — request <code>{status.msg}</code>. Distribution settles at the
-              next snapshot.
+              Sent — <code>{status.msg}</code> is on its way to your wallet.
             </p>
           )}
           {status.kind === "error" && <p className="note is-bad">{status.msg}</p>}

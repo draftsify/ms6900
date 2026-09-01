@@ -2,16 +2,19 @@
 
 import { useEffect, useRef } from "react";
 
+// TODO: drop the real URLs in here once the token is live on pump.fun
+export const X_URL = "#";
+export const TOKEN_URL = "#";
+
 const NAV = [
-  { label: "Home", href: "#hero" },
-  { label: "Airdrops", href: "/airdrops" },
-  { label: "Claim", href: "#claim" },
+  { label: "X", href: X_URL },
+  { label: "Token", href: TOKEN_URL },
 ];
 
 const SUB =
   "MS6900 buys real, listed equities OTC and airdrops them to token holders — every distribution settled onchain through pump.fun.";
 
-export default function Hero({ children }: { children?: React.ReactNode }) {
+export default function Hero() {
   const subRef = useRef<HTMLParagraphElement>(null);
 
   // word-by-word blur reveal on the supporting text
@@ -43,7 +46,7 @@ export default function Hero({ children }: { children?: React.ReactNode }) {
         </a>
         <div className="nav__links">
           {NAV.map((n) => (
-            <a key={n.label} href={n.href}>
+            <a key={n.label} href={n.href} target="_blank" rel="noopener noreferrer">
               {n.label}
             </a>
           ))}
@@ -67,8 +70,6 @@ export default function Hero({ children }: { children?: React.ReactNode }) {
             {SUB}
           </p>
         </div>
-
-        {children}
       </section>
     </>
   );

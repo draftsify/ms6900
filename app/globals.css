@@ -707,3 +707,23 @@ img{max-width:100%;display:block}
     rgba(10,10,10,.955) 46%,
     rgba(10,10,10,.97) 100%);
 }
+
+/* ═══════════════════════════════════════════
+   landing only — the hero stands on its own again
+   ═══════════════════════════════════════════ */
+.hero{
+  min-height:min(92svh,820px);
+  justify-content:center;
+  padding:clamp(120px,16vh,170px) clamp(18px,4vw,40px) clamp(60px,9vh,100px);
+}
+.visual{inset:0;height:auto}
+.hero__photo::after{
+  background:linear-gradient(to bottom,
+    rgba(10,10,10,.78) 0%,
+    rgba(10,10,10,.28) 16%,
+    rgba(10,10,10,.62) 52%,
+    rgba(10,10,10,.90) 82%,
+    #0a0a0a 100%);
+}
+.hero__photo{filter:blur(5px) brightness(.30) saturate(1.1) contrast(1.03)}
+.foot__cols{grid-template-columns:repeat(2,1fr);max-width:420px;margin-left:auto}
