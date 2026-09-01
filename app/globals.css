@@ -806,3 +806,13 @@ img{max-width:100%;display:block}
   margin-top:clamp(36px,5vw,56px);
 }
 .cta-line p{margin:0;font-size:15px;font-weight:600;color:rgba(255,255,255,.55)}
+
+/* ═══════════════════════════════════════════
+   landing = nav + claim. no hero art, no headline.
+   ═══════════════════════════════════════════ */
+.dash--embed{
+  padding-top:clamp(104px,14vh,150px);
+  border-top:0;background:none;
+}
+.dash--embed .dash__main{padding-top:0;padding-bottom:clamp(50px,7vw,90px)}
+.nav{background:var(--bg)}

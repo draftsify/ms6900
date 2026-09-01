@@ -97,7 +97,7 @@ export default function HowItWorks() {
 
         <div className="cta-line" data-reveal>
           <p>Ready when you are.</p>
-          <Link className="btn btn--light" href="/#claim">
+          <Link className="btn btn--light" href="/">
             Claim your allocation
             <span className="btn__arrow" aria-hidden>
               <svg viewBox="0 0 256 256" width="14" height="14">

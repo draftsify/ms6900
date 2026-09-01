@@ -5,7 +5,7 @@ const COLS = [
     links: [
       { label: "How it works", href: "/how-it-works" },
       { label: "Stocks", href: "/#listings" },
-      { label: "Claim", href: "/#claim" },
+      { label: "Claim", href: "/" },
     ],
   },
 ];
